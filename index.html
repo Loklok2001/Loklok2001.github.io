@@ -5,33 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=552289119, affiliate-data=myAffiliateData, app-argument=https://apps.apple.com/my/app/hai-co/id552289119">
     <title>Nihao</title>
-    <script type="text/javascript">
-               // Function to set data to clipboard
-        function setDataToClipboard(data) {
-            // Create a temporary textarea element
-            var textarea = document.createElement("textarea");
-            textarea.value = data;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("copy"); // Copy the data to clipboard
-            document.body.removeChild(textarea); // Clean up
-
-            console.log("This is a debug message");
-        }
-
-        // Extract query parameters from the URL and store in clipboard
-        var urlParams = new URLSearchParams(window.location.search);
-        var dataToStore = ""; // Initialize data to store
-        urlParams.forEach(function(value, key) {
-            dataToStore += key + "=" + value + "\n"; // Format data as key=value
-        });
-        console.log("This is ");
-        
-        setDataToClipboard(dataToStore); // Store data to clipboard
-    </script>
+    <script src="dist/clipboard.min.js"></script>
 </head>
 <body>
     <p>Redirecting to another website...</p>
     <!-- Add any other content here -->
+    <!-- Target -->
+    <textarea id="bar">Mussum ipsum cacilds...</textarea>
+    
+    <!-- Trigger -->
+    <button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
+        Cut to clipboard
+    </button>
 </body>
 </html>
