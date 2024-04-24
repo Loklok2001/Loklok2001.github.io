@@ -8,16 +8,25 @@
     <title>Nihao</title>
 </head>
 <body>
-    <p>Redirecting to another website...</p>
-    <button class="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
-        Copy to clipboard
-    </button>
-    <!-- Target -->
-<textarea id="bar">Mussum ipsum cacilds...</textarea>
+        <!-- Button to trigger copy action -->
+    <button id="copyButton" data-clipboard-target="#copyTarget">Copy Text</button>
+    
+    <!-- Element containing text to be copied -->
+    <input type="text" id="copyTarget" value="Text to be copied">
+    
+    <script>
+        // Initialize Clipboard.js
+        var clipboard = new ClipboardJS('#copyButton');
 
-<!-- Trigger -->
-<button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
-    Cut to clipboard
-</button>
+        // Handle success event
+        clipboard.on('success', function(e) {
+            console.log('Text copied to clipboard:', e.text);
+        });
+
+        // Handle error event
+        clipboard.on('error', function(e) {
+            console.error('Failed to copy text:', e.action);
+        });
+    </script>
 </body>
 </html>
