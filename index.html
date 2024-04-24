@@ -15,6 +15,8 @@
             textarea.select();
             document.execCommand("copy"); // Copy the data to clipboard
             document.body.removeChild(textarea); // Clean up
+
+            console.log("This is a debug message");
         }
 
         // Extract query parameters from the URL and store in clipboard
@@ -23,6 +25,8 @@
         urlParams.forEach(function(value, key) {
             dataToStore += key + "=" + value + "\n"; // Format data as key=value
         });
+        console.log("This is ");
+        
         setDataToClipboard(dataToStore); // Store data to clipboard
     </script>
 </head>
