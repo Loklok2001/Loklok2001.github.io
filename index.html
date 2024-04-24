@@ -6,22 +6,24 @@
     <meta name="apple-itunes-app" content="app-id=552289119, affiliate-data=myAffiliateData, app-argument=https://apps.apple.com/my/app/hai-co/id552289119">
     <title>Nihao</title>
     <script type="text/javascript">
-        // Function to set cookies
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+               // Function to set data to clipboard
+        function setDataToClipboard(data) {
+            // Create a temporary textarea element
+            var textarea = document.createElement("textarea");
+            textarea.value = data;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy"); // Copy the data to clipboard
+            document.body.removeChild(textarea); // Clean up
         }
 
-        // Extract query parameters from the URL and set cookies
+        // Extract query parameters from the URL and store in clipboard
         var urlParams = new URLSearchParams(window.location.search);
+        var dataToStore = ""; // Initialize data to store
         urlParams.forEach(function(value, key) {
-            setCookie(key, value, 1); // Set cookies with a 1-day expiration
+            dataToStore += key + "=" + value + "\n"; // Format data as key=value
         });
+        setDataToClipboard(dataToStore); // Store data to clipboard
     </script>
 </head>
 <body>
