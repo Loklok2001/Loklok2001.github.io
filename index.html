@@ -4,31 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=552289119, affiliate-data=myAffiliateData, app-argument=https://apps.apple.com/my/app/hai-co/id552289119">
+    <script src="https://rawcdn.githack.com/zenorocha/clipboard.js/v2.0.11/dist/clipboard.min.js"></script>
     <title>Nihao</title>
 </head>
 <body>
     <p>Redirecting to another website...</p>
-    <input type="text" value="Hello World" id="myInput" style="display: none;">
-
-    <script type="text/javascript">
-        function myFunction() {
-          // Get the text field
-          var targetURL = window.location.href;
-          document.getElementById("myInput").value = targetURL; 
-          var copyText = document.getElementById("myInput");
-        
-          // Select the text field
-          copyText.select();
-          copyText.setSelectionRange(0, 99999); // For mobile devices
-        
-           // Copy the text inside the text field
-          navigator.clipboard.writeText(copyText.value);
-        
-          // Alert the copied text
-          alert("Copied the text: " + copyText.value);
-        }
-
-        myFunction()
-    </script>
+    <button class="btn" data-clipboard-text="Just because you can doesn't mean you should — clipboard.js">
+        Copy to clipboard
+    </button>
 </body>
 </html>
