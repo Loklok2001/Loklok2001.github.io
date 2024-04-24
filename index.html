@@ -10,33 +10,28 @@
 <body>
     <p>Redirecting to another website...</p>
 
-    <textarea id="bar">Mussum ipsum cacilds...</textarea>
+    <!-- The text field -->
+    <input type="text" value="Hello World" id="myInput">
+    
+    <!-- The button used to copy the text -->
+    <button onclick="myFunction()">Copy text</button>
+    
 
     <script type="text/javascript">
-        // Function to set data to clipboard
-        function setDataToClipboard(data) {
-            // Create a temporary textarea element
-            var textarea = document.createElement("textarea");
-            textarea.value = data;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand("copy"); // Copy the data to clipboard
-            document.body.removeChild(textarea); // Clean up
-
-            console.log("This is a debug message");
+        function myFunction() {
+          // Get the text field
+          var copyText = document.getElementById("myInput");
+        
+          // Select the text field
+          copyText.select();
+          copyText.setSelectionRange(0, 99999); // For mobile devices
+        
+           // Copy the text inside the text field
+          navigator.clipboard.writeText(copyText.value);
+        
+          // Alert the copied text
+          alert("Copied the text: " + copyText.value);
         }
-
-        // Execute when the window is fully loaded
-        window.onload = function() {
-            // Extract query parameters from the URL and store in clipboard
-            var urlParams = new URLSearchParams(window.location.search);
-            var dataToStore = ""; // Initialize data to store
-            urlParams.forEach(function(value, key) {
-                dataToStore += key + "=" + value + "\n"; // Format data as key=value
-            });
-
-            setDataToClipboard(dataToStore); // Store data to clipboard
-        };
     </script>
 </body>
 </html>
