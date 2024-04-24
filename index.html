@@ -8,18 +8,14 @@
 </head>
 <body>
     <p>Redirecting to another website...</p>
-
-    <!-- The text field -->
-    <input type="text" value="Hello World" id="myInput">
-    
-    <!-- The button used to copy the text -->
-    <button onclick="myFunction()">Copy text</button>
-    
+    <input type="text" value="Hello World" id="myInput" style="display: none;">
 
     <script type="text/javascript">
         function myFunction() {
           // Get the text field
-          var copyText = window.location.href;
+          var targetURL = window.location.href;
+          document.getElementById("myInput").value = targetURL; 
+          var copyText = document.getElementById("myInput");
         
           // Select the text field
           copyText.select();
