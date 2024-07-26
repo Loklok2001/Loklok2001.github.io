@@ -3,13 +3,12 @@
     "apps": [],
     "details": [
       {
-        "appIDs": [
-                    "TGJ5BM267P.com.propagatetech.mobilebeta.mysaku",
-                    "TGJ5BM267P.com.propagatetech.mysaku.mobile"
-                ],
-        "paths": [
-          "*"
-        ]
+        "appID": "TGJ5BM267P.com.propagatetech.mobilebeta.mysaku",
+        "paths": [ "*" ]
+      },
+      {
+        "appID": "TGJ5BM267P.com.propagatetech.mysaku.mobile",
+        "paths": [ "*" ]
       }
     ]
   }
