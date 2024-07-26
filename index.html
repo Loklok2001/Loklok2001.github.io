@@ -1,8 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=552289119, affiliate-data=myAffiliateData, app-argument=https://apps.apple.com/my/app/hai-co/id552289119">
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <title>Nihao</title>
 </head>
 <body>
 
+    <button id="urlBtn" data-clipboard-text="test">
+    Copy to clipboard
+    </button>
+    
+    <!-- Element containing text to be copied -->
+    <input type="text" id="copyTarget" value="Text to be copied">
+    
+    <script>
+        // Initialize Clipboard.js
+        // Get the button element
+        var button = document.getElementById('urlBtn');
+
+        // Set the data-clipboard-text attribute to the current URL
+        button.setAttribute('data-clipboard-text', window.location.href);
+
+        // Initialize Clipboard.js
+        var clipboard = new ClipboardJS(button);
+
+        // Handle success event
+        clipboard.on('success', function(e) {
+            console.log('Text copied to clipboard:', e.text);
+        });
+
+        // Handle error event
+        clipboard.on('error', function(e) {
+            console.error('Failed to copy text:', e.action);
+        });
+
+
+        
+    </script>
 </body>
 </html>
