@@ -17,11 +17,6 @@
         document.getElementById("openApp").addEventListener("click", () => {
             // Trigger the custom protocol
             window.location.href = "fargoprinter://example";
-
-            // Attempt to close the tab after a short delay
-            setTimeout(() => {
-                window.close();
-            }, 100); // Adjust the delay if needed
         });
     </script>
 </body>
