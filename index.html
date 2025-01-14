@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-itunes-app" content="app-id=552289119, affiliate-data=myAffiliateData, app-argument=https://apps.apple.com/my/app/hai-co/id552289119">
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
-    <title>Nihao</title>
+    <title>Fargo Printer Protocol</title>
 </head>
 <body>
+    <h1>Fargo Printer App</h1>
+    <p>Click the button below to open the Fargo Printer App using the custom URL protocol.</p>
 
-    <button id="openApp">Open Fargo Printer App</button>
+    <button id="openApp" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        Open Fargo Printer App
+    </button>
 
     <script>
         document.getElementById("openApp").addEventListener("click", () => {
@@ -22,37 +24,5 @@
             }, 100); // Adjust the delay if needed
         });
     </script>
-    
-<!--     <button id="urlBtn" data-clipboard-text="test">
-    Copy to clipboard
-    </button> -->
-    
-    <!-- Element containing text to be copied -->
-<!--     <input type="text" id="copyTarget" value="Text to be copied"> -->
-    
-    
-<!--         // Initialize Clipboard.js
-        // Get the button element
-        // var button = document.getElementById('urlBtn');
-
-        // // Set the data-clipboard-text attribute to the current URL
-        // button.setAttribute('data-clipboard-text', window.location.href);
-
-        // // Initialize Clipboard.js
-        // var clipboard = new ClipboardJS(button);
-
-        // // Handle success event
-        // clipboard.on('success', function(e) {
-        //     console.log('Text copied to clipboard:', e.text);
-        // });
-
-        // // Handle error event
-        // clipboard.on('error', function(e) {
-        //     console.error('Failed to copy text:', e.action);
-        // });
- -->
-
-        
-    
 </body>
 </html>
