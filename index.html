@@ -4,28 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fargo Printer Protocol</title>
+
+    <!-- Freshworks Widget -->
+    <script>
+        window.fwSettings = { 'widget_id': 150000004911 };
+        (function() {
+            if (typeof window.FreshworksWidget !== "function") {
+                var n = function() { n.q.push(arguments); };
+                n.q = [];
+                window.FreshworksWidget = n;
+            }
+        })();
+    </script>
+    <script type="text/javascript" src="https://widget.freshworks.com/widgets/150000004911.js" async defer></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #00696C;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005256;
+        }
+    </style>
 </head>
-    
-<script>
-	window.fwSettings={
-	'widget_id':150000004911
-	};
-	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
-</script>
-<script type='text/javascript' src='https://widget.freshworks.com/widgets/150000004911.js' async defer></script>
-    
 <body>
     <h1>Fargo Printer App</h1>
     <p>Click the button below to open the Fargo Printer App using the custom URL protocol.</p>
 
-    <button id="openApp" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
-        Open Fargo Printer App
-    </button>
+    <button id="openApp">Open Fargo Printer App</button>
+
+    <p id="errorMessage" style="color: red; display: none;">App failed to open. Please make sure it is installed.</p>
 
     <script>
         document.getElementById("openApp").addEventListener("click", () => {
-            // Trigger the custom protocol
-            window.location.href = "fargoprinter://example";
+            const appURL = "fargoprinter://example";
+
+            // Try to open the custom protocol
+            window.location.href = appURL;
+
+            // Fallback: Show error message if the app does not open in 2 seconds
+            setTimeout(() => {
+                document.getElementById("errorMessage").style.display = "block";
+            }, 2000);
         });
     </script>
 </body>
