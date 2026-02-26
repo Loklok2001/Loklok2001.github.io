@@ -26,32 +26,6 @@
     </style>
 </head>
 <body>
-    <h1>Fargo Printer App</h1>
-    <p>Click the button below to open the Fargo Printer App using the custom URL protocol.</p>
 
-    <button id="openApp">Open Fargo Printer App</button>
-
-    <p id="errorMessage" style="color: red; display: none;">App failed to open. Please make sure it is installed.</p>
-
-
-    <h2>Click the link below to open in a new tab:</h2>
-    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Open Example.com in a new tab</a>
-
-    <h2>Click below to navigate to another page:</h2>
-    <a href="https://web.whatsapp.com/">Go to Page 2</a>
-
-    <script>
-        document.getElementById("openApp").addEventListener("click", () => {
-            const appURL = "fargoprinter://example";
-
-            // Try to open the custom protocol
-            window.location.href = appURL;
-
-            // Fallback: Show error message if the app does not open in 2 seconds
-            setTimeout(() => {
-                document.getElementById("errorMessage").style.display = "block";
-            }, 2000);
-        });
-    </script>
 </body>
 </html>
